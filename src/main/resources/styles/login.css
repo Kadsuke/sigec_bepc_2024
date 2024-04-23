@@ -1,0 +1,24 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+#backgroundPane {
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-opacity: 0.4;
+}
+
+#AnchorPaneText {
+    
+}
+
+/*
+    <Pane id="backgroundPane">
+         <ImageView fitWidth="900.0" fitHeight="600.0">
+             <image>
+                 <Image url="@/images/candidat.jpg" />
+             </image>
+         </ImageView>
+     </Pane>
+
+*/

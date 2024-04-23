@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="homeAnchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bf.menapln.view.controller.HomeController">
+    <stylesheets>
+        <URL value="@/styles/home.css" />
+    </stylesheets>
+    <top>
+        <BorderPane BorderPane.alignment="CENTER">
+           <top>
+              <Label text="Acceuil" textFill="#ee3f3f" BorderPane.alignment="CENTER">
+                 <font>
+                    <Font size="16.0" />
+                 </font>
+              </Label>
+           </top>
+           <center>
+              <ButtonBar BorderPane.alignment="CENTER">
+                 <BorderPane.margin>
+                    <Insets bottom="10.0" right="5.0" />
+                 </BorderPane.margin>
+              </ButtonBar>
+           </center>
+        </BorderPane>
+     </top>
+     <center>  
+        <BorderPane BorderPane.alignment="CENTER">
+           <BorderPane.margin>
+              <Insets bottom="5.0" left="5.0" right="5.0" />
+           </BorderPane.margin>
+           <top>
+              <HBox opacity="0.9" prefHeight="50.0" style="-fx-border-color: gray;" BorderPane.alignment="CENTER">
+                 <BorderPane.margin>
+                    <Insets bottom="5.0" />
+                 </BorderPane.margin>
+                 <children>
+<!--                    <VBox>
+                       <children>
+                          <Label text="Type structure" />
+                          <ComboBox maxHeight="35.0" minHeight="35.0" prefWidth="150.0" style="-fx-background-color: #fff; -fx-border-color: gray;" />
+                       </children>
+                       <HBox.margin>
+                          <Insets right="5.0" />
+                       </HBox.margin>
+                    </VBox>
+                    <VBox>
+                       <children>
+                          <Label text="Région" />
+                          <ComboBox maxHeight="35.0" minHeight="35.0" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #fff; -fx-border-color: gray;" />
+                       </children>
+                       <HBox.margin>
+                          <Insets right="5.0" />
+                       </HBox.margin>
+                    </VBox>
+                    <VBox>
+                       <children>
+                          <Label text="Province" />
+                          <ComboBox maxHeight="35.0" minHeight="35.0" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #fff; -fx-border-color: gray;" />
+                       </children>
+                       <HBox.margin>
+                          <Insets right="5.0" />
+                       </HBox.margin>
+                    </VBox>
+                    <VBox>
+                       <children>
+                          <Label text="Commune" />
+                          <ComboBox maxHeight="35.0" minHeight="35.0" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #fff; -fx-border-color: gray;" />
+                       </children>
+                       <HBox.margin>
+                          <Insets right="5.0" />
+                       </HBox.margin>
+                    </VBox>
+                    <VBox>
+                       <children>
+                          <Label text="Structure" />
+                          <ComboBox maxHeight="35.0" minHeight="25.0" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #fff; -fx-border-color: gray;" />
+                       </children>
+                       <HBox.margin>
+                          <Insets right="5.0" />
+                       </HBox.margin>
+                    </VBox>-->
+                    <VBox>
+                       <children>
+                          <Label text="Statistique par" />
+                          <ComboBox fx:id="typeStatistiqueCol" maxHeight="35.0" minHeight="35.0" onAction="#typeStatistiqueOnChange" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #fff; -fx-border-color: gray;" />
+                       </children>
+                    </VBox>
+                 </children>
+                 <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                 </padding>
+              </HBox>
+           </top>
+           <center>
+              <VBox fx:id="statVBox" BorderPane.alignment="CENTER">
+                 <children>
+                    <TableView fx:id="dataTable" opacity="0.9">
+                      <columns>
+                        <TableColumn fx:id="structureCol" prefWidth="75.0" text="Structure" />
+                        <TableColumn fx:id="serieCol" prefWidth="75.0" text="Série" />
+                          <TableColumn fx:id="totalInscritsCol" prefWidth="75.0" text="Total Inscrits" />
+                          <TableColumn fx:id="nbGCol" prefWidth="75.0" text="Nb garçons" />
+                          <TableColumn fx:id="nbFCol" prefWidth="75.0" text="Nb filles" />
+                          <TableColumn fx:id="nbApteCol" prefWidth="75.0" text="Nb Aptes" />
+                          <TableColumn fx:id="nbInapteCol" prefWidth="75.0" text="Nb inaptes" />
+                      </columns>
+                       <columnResizePolicy>
+                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                       </columnResizePolicy>
+                    </TableView>
+                    <TableView fx:id="dataTable2" opacity="0.9">
+                      <columns>
+                        <TableColumn fx:id="structureCol2" prefWidth="75.0" text="Structure" />
+                        <TableColumn fx:id="presidentCol" prefWidth="75.0" text="Président" />
+                          <TableColumn fx:id="secretaireCol" prefWidth="75.0" text="Sécretaire" />
+                          <TableColumn fx:id="correcteurCol" prefWidth="75.0" text="Correcteur" />
+                          <TableColumn fx:id="superviseurCol" prefWidth="75.0" text="Superviseur" />
+                          <TableColumn fx:id="vicepresidentCol" prefWidth="75.0" text="Vice-Président" />
+                          <TableColumn fx:id="preseidentcentresecondaire" prefWidth="75.0" text="Président Centre Secondaire" />
+                      </columns>
+                       <columnResizePolicy>
+                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                       </columnResizePolicy>
+                    </TableView>
+                 </children>
+              </VBox>
+           </center>
+        </BorderPane>
+     </center>
+     <right>
+        <AnchorPane minWidth="300.0" style="-fx-border-color: gray;" BorderPane.alignment="CENTER">
+           <BorderPane.margin>
+              <Insets bottom="5.0" right="5.0" />
+           </BorderPane.margin>
+           <children>
+              <BarChart fx:id="barChart" opacity="0.9">
+                <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+                </xAxis>
+                <yAxis>
+                  <NumberAxis side="LEFT" />
+                </yAxis>
+              </BarChart>
+           </children>
+        </AnchorPane>
+     </right>
+<!--     <Pane id="backgroundPane">
+        <ImageView fitHeight="700.0" fitWidth="1550.0" opacity="0.45">
+            <image>
+                <Image url="@../../../images/armoirie.png" />
+            </image>
+        </ImageView>
+     </Pane>-->
+</BorderPane>

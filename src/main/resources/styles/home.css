@@ -1,0 +1,18 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 5 janv. 2024, 13:10:10
+    Author     : Kadsuke
+*/
+/* yourStylesheet.css */
+#homeAnchorPane {
+    -fx-background-image: url('@../../../images/armoirie.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-color: rgba(255, 255, 255, 0.6);
+    -fx-background-size: 100% 100%; 
+}
+

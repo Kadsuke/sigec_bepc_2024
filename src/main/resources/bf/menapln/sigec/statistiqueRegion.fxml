@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bf.menapln.view.controller.StatistiqueEtablissementController">
+    <stylesheets>
+        <URL value="@/styles/statistiqueetablissement.css" />
+    </stylesheets>
+    <ComboBox fx:id="comboboxTypeStat" layoutX="20.0" layoutY="27.0" onAction="#onChangeTypeStruct" prefWidth="300" promptText="Sélectionner une stat à imprimer" />
+    <Label layoutX="500.0" layoutY="-4.0" prefHeight="18.0" prefWidth="315.0" style="-fx-font-size: 20;" text="Gestion des Statistiques" textFill="RED">
+      <font>
+         <Font size="15.0" />
+      </font></Label>
+    <SplitPane layoutX="10" layoutY="80" orientation="HORIZONTAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+            <WebView fx:id="pdfWebView" prefHeight="600.0" prefWidth="800.0"/>
+    </SplitPane>
+   <Button fx:id="enregistrerBtn" layoutX="348.0" layoutY="27.0" mnemonicParsing="false" onAction="#ImprimerPDF" text="Exporter en Word" />
+   <Button fx:id="imprimerBtn" layoutX="473.0" layoutY="27.0" mnemonicParsing="false" onAction="#exportWord" text="Export Tableaux Word" />
+</AnchorPane>

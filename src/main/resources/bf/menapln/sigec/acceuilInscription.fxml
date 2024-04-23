@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bf.menapln.view.controller.AcceuilInscriptionController">
+   <center>
+      <TableView fx:id="tableView" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="colId" prefWidth="75.0" text="Id" visible="false"/>
+            <TableColumn fx:id="colZone" prefWidth="75.0" text="Zone" />
+            <TableColumn fx:id="colReg" prefWidth="75.0" text="Region" />
+            <TableColumn fx:id="colProv" prefWidth="75.0" text="Province" />
+            <TableColumn fx:id="colNumDossier" prefWidth="75.0" text="Numero Dossier" />
+            <TableColumn fx:id="colCentre" prefWidth="75.0" text="Centre" />
+            <TableColumn fx:id="colEtablissement" prefWidth="75.0" text="Etablissement" />
+            <TableColumn fx:id="colGroupePedagogique" prefWidth="75.0" text="Groupe Pédagogique" />
+            <TableColumn fx:id="colNom" prefWidth="75.0" text="Nom" />
+            <TableColumn fx:id="colPrenom" prefWidth="75.0" text="Prénom(s)" />
+            <TableColumn fx:id="colSexe" prefWidth="75.0" text="Sexe" />
+            <TableColumn fx:id="colTypeDateNaissance" prefWidth="75.0" text="Type Date" />
+            <TableColumn fx:id="colDateNaissance" prefWidth="75.0" text="Date Naissance" />
+            <TableColumn fx:id="colLieuNaissance" prefWidth="75.0" text="Lieu Naissance"/>
+            <TableColumn fx:id="colSport" prefWidth="75.0" text="Sport" />
+            <TableColumn fx:id="colPaysNaissance" prefWidth="75.0" text="Pays Naissance"/>
+            <TableColumn fx:id="colNationalite" prefWidth="75.0" text="Nationalite" />
+            <TableColumn fx:id="colOption" prefWidth="75.0" text="Option" />
+            <TableColumn fx:id="colConcours" prefWidth="75.0" text="Concours" />
+            <TableColumn fx:id="colEtablissementSerie" prefWidth="75.0" text="Choix" />
+            <TableColumn fx:id="colSituation" prefWidth="75.0" text="Situation" />
+            <TableColumn fx:id="colTypeHandicap" prefWidth="75.0" text="Type handicap" visible="false"/>
+            <TableColumn fx:id="colNatureHandicap" prefWidth="75.0" text="Nature Handicap" visible="false"/>
+            <TableColumn fx:id="colPrescriptionHandicap" prefWidth="75.0" text="Prescription" visible="false"/>
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         
+      </TableView>
+   </center>
+   <top>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+              <ButtonBar BorderPane.alignment="CENTER">
+              <buttons>
+                <Button mnemonicParsing="false" onAction="#openInscription" style="-fx-background-color: #0096c9;" text="Ajouter un candidat" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="PLUS" />
+                     </graphic></Button>
+                  <Button maxWidth="120.0" mnemonicParsing="false" onAction="#exportExcel" style="-fx-background-color: #0096c9 #0096c9;" text="Export Excel" textFill="WHITE">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="FILE_EXCEL_ALT" />
+                     </graphic>
+                  </Button>
+              </buttons>
+               <padding>
+                  <Insets bottom="10.0" right="5.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets top="10.0" />
+               </BorderPane.margin>
+            </ButtonBar>
+         </center>
+         <left>
+             <HBox spacing="10">
+                <TextField fx:id="rechercheField" onAction="#fieldRechercheKeyUp" prefHeight="5.0" prefWidth="150.0" />
+                <ComboBox fx:id="comboboxTypeList" onAction="#onChangeTypeList" prefHeight="30.0" prefWidth="150.0" promptText="Type Liste" />
+                <ComboBox fx:id="comboboxValeurList" onAction="#onChangeValeurList" prefHeight="30.0" prefWidth="150.0" promptText="Valeur Type Liste" />
+                <ComboBox fx:id="comboboxRegion" onAction="#onChangeRegion" prefHeight="30.0" prefWidth="150.0" promptText="Région" />
+                <ComboBox fx:id="comboboxProvince" prefHeight="30.0" prefWidth="150.0" promptText="Province" />
+                <padding>
+                  <Insets bottom="10.0" right="5.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets top="10.0" />
+               </BorderPane.margin>
+             </HBox>
+         </left>
+         <top>
+            <Label fx:id="label" text="Liste des candidats à l'examen du BEPC" textFill="#ee3f3f" BorderPane.alignment="CENTER" />
+         </top>
+      </BorderPane>
+   </top>
+</BorderPane>

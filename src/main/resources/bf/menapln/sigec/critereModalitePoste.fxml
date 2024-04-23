@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bf.menapln.view.controller.CritereModalitePosteController">
+    <stylesheets>
+        <URL value="@/styles/critere.css" />
+    </stylesheets>
+    <children>
+      <Label layoutX="500.0" layoutY="-4.0" prefHeight="30.0" prefWidth="337.0" style="-fx-font-size: 20;" text="Gestion des Critères et Modalités" textFill="RED" />
+        <SplitPane dividerPositions="0.5" layoutX="10" layoutY="10" orientation="HORIZONTAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+            <VBox spacing="3">
+                <TitledPane text="Infos Critère" textFill="RED">
+                    <VBox spacing="3" style="-fx-border-color: blue;">
+                        <HBox spacing="5">
+                            <VBox>
+                                <Label text="Poste jury *">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                                <ComboBox fx:id="comboboxPoste" prefHeight="26.0" prefWidth="250.0" />
+                            </VBox>
+                            <VBox>
+                                <Label text="Critère *">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                                <ComboBox fx:id="comboboxCritere" prefHeight="26.0" prefWidth="250.0" />
+                            </VBox>
+                            <VBox>
+                                <Label text="Type Champ">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                                <ComboBox fx:id="comboboxTypeChamp" prefHeight="26.0" prefWidth="250.0" />
+                            </VBox>
+                            <VBox>
+                                <Label text="Ponderation Critère">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                                <TextField fx:id="ponderationField" prefHeight="26.0" prefWidth="250.0" />
+                            </VBox>
+                            <VBox>
+                                <Label text="Ordre Critère">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                                <TextField fx:id="ordreField" prefHeight="26.0" prefWidth="250.0" />
+                            </VBox>
+                        </HBox>
+                    </VBox>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+                </TitledPane>
+                <TitledPane text="Critère-&gt;Modalite" textFill="RED">
+                    <VBox spacing="3" style="-fx-border-color: blue;">
+                        <HBox spacing="5">
+                            <VBox>
+                                <Label text="Listes Modalités" textFill="#202020">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                                <ListView fx:id="listViewModalite" prefHeight="400.0" prefWidth="400.0" />
+                            </VBox>
+                        </HBox>
+                    </VBox>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+                </TitledPane>  
+                <HBox alignment="CENTER" prefWidth="991.0" spacing="20">
+                    <Button onAction="#saveAction" style="-fx-background-color: green;" text="Enregistrer" textFill="#e7e1e1" />
+                    <Button style="-fx-background-color: red;" text="Annuler" textFill="#e4dddd" />
+                </HBox>
+            </VBox>
+            <VBox>
+                <TitledPane text="Listes des Criteres et Modalites" textFill="RED">
+                    <TableView fx:id="tableView" prefHeight="262.0" prefWidth="800.0">
+                        <columns>
+                            <TableColumn fx:id="colPoste" text="Poste">
+                              <cellValueFactory>
+                                 <PropertyValueFactory property="poste" />
+                              </cellValueFactory>
+                           </TableColumn>
+                           <TableColumn fx:id="colCritere" text="Critere">
+                              <cellValueFactory>
+                                 <PropertyValueFactory property="prescriptionHandicap" />
+                              </cellValueFactory>
+                           </TableColumn>
+                           <TableColumn fx:id="coltypeChamp" text="Type Champ">
+                              <cellValueFactory>
+                                 <PropertyValueFactory property="prescriptionHandicap" />
+                              </cellValueFactory>
+                           </TableColumn>
+                           <TableColumn fx:id="colPonderationCritere" text="Ponderation Critere">
+                              <cellValueFactory>
+                                 <PropertyValueFactory property="ponderationCritere" />
+                              </cellValueFactory>
+                           </TableColumn>
+                           <TableColumn fx:id="colModalite" text="Modalite">
+                              <cellValueFactory>
+                                 <PropertyValueFactory property="modalite" />
+                              </cellValueFactory>
+                           </TableColumn>
+                           <TableColumn fx:id="colPonderationModalite" text="Ponderation Modalite">
+                              <cellValueFactory>
+                                 <PropertyValueFactory property="ponderationModalite" />
+                              </cellValueFactory>
+                           </TableColumn>
+                           <TableColumn fx:id="colOrdre" text="Ordre">
+                              <cellValueFactory>
+                                 <PropertyValueFactory property="ordre" />
+                              </cellValueFactory>
+                           </TableColumn>
+                        </columns>
+                  <columnResizePolicy>
+                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                  </columnResizePolicy>
+                    </TableView>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </TitledPane> 
+            </VBox>
+        </SplitPane>
+        <TextField fx:id="rechercheType" layoutX="1036.0" layoutY="20.0" />
+        <Label layoutX="959.0" layoutY="26.0" text="Rechercher" />
+   </children>
+</AnchorPane>

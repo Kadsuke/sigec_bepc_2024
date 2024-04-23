@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorInput?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bf.menapln.view.controller.LoginController">
+    <stylesheets>
+        <URL value="@/styles/login.css" />
+    </stylesheets>
+   <children>
+    <Pane id="backgroundPane">
+         <ImageView fitHeight="600.0" fitWidth="900.0" opacity="0.45">
+             <image>
+                 <Image url="@../../../images/candidat.jpg" />
+             </image>
+         </ImageView>
+     </Pane>
+    <AnchorPane id="AnchorPane" layoutX="1.0">
+      <Label layoutX="100.0" layoutY="26.0" text="ystème   ntégré de      estion des    xamens et     oncours" textFill="#2b2a2a">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="2.0" prefHeight="86.0" prefWidth="34.0" text="S" textFill="#df0606">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="199.0" layoutY="3.0" prefHeight="86.0" prefWidth="34.0" text="I" textFill="#df0606">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="347.0" layoutY="2.0" prefHeight="86.0" prefWidth="34.0" text="G" textFill="#df0606">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="514.0" layoutY="3.0" prefHeight="86.0" prefWidth="34.0" text="E" textFill="#df0606">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="677.0" layoutY="2.0" prefHeight="86.0" prefWidth="34.0" text="C" textFill="#df0606">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+    </AnchorPane>
+      <Pane focusTraversable="true" layoutX="171.0" layoutY="162.0" prefHeight="367.0" prefWidth="568.0" style="-fx-border-color: blue; -fx-border-width: 3; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 0); -fx-border-radius: 5;">
+         <children>
+            <TextField fx:id="identifiantField" layoutX="112.0" layoutY="114.0" prefHeight="39.0" prefWidth="359.0" promptText="Identifiant" />
+            <PasswordField fx:id="mdpField" layoutX="113.0" layoutY="171.0" prefHeight="39.0" prefWidth="359.0" promptText="Mots de passe" />
+            <Button layoutX="224.0" layoutY="230.0" mnemonicParsing="false" onAction="#onActionConnect" prefHeight="32.0" prefWidth="108.0" style="-fx-background-color: green;" text="Connexion" textFill="#e1d7d7">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="185.0" layoutY="56.0" prefHeight="39.0" prefWidth="199.0" text="Connectez-vous">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <Lighting diffuseConstant="1.42" specularConstant="0.45" specularExponent="18.53">
+               <bumpInput>
+                  <Shadow>
+                     <input>
+                        <ColorInput />
+                     </input>
+                  </Shadow>
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.9894737005233765" green="0.9528264999389648" blue="0.9528264999389648" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </Pane>
+   </children>
+</AnchorPane>

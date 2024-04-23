@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bf.menapln.view.controller.CentreChangeController">
+    <stylesheets>
+        <!-- <URL value="@/styles/jury.css" /> -->
+    </stylesheets>
+    <children>
+      <Label alignment="CENTER" layoutX="349.0" layoutY="15.0" prefHeight="25.0" prefWidth="440.0" style="-fx-font-size: 20;" text="Changement de Centre des candidats" textFill="RED" />
+        <SplitPane dividerPositions="0.3" layoutX="10" layoutY="10" orientation="HORIZONTAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+            <VBox spacing="3">
+                <TitledPane text="Infos Source" textFill="RED">
+                    <VBox spacing="3" style="-fx-border-color: blue;">
+                        <HBox spacing="5">
+                            <VBox>
+                                <Label text="Centre examen *" />
+                                <ComboBox fx:id="comboboxCentreExamenSource" onAction="#onChangeActionCentre" prefHeight="26.0" prefWidth="250.0" />
+                            </VBox>
+                            <VBox>
+                                <Label text="Etablissement *" />
+                                <ComboBox fx:id="comboboxEtablissement" onAction="#onChangeActionEtab" prefHeight="26.0" prefWidth="250.0" />
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </TitledPane>
+                 <TitledPane text="Infos Destination" textFill="RED">
+                    <VBox spacing="3" style="-fx-border-color: blue;">
+                        <HBox spacing="5">
+                            <VBox>
+                                <Label text="Centre examen *" />
+                                <ComboBox fx:id="comboboxCentreExamenDestination" prefHeight="26.0" prefWidth="250.0" />
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </TitledPane>
+            </VBox>
+            <VBox>
+                <TitledPane fx:id="titre" text="Listes des candidats par ordre alpha. correspondants au filtre" textFill="RED">
+                
+                    <TableView fx:id="tableView" prefHeight="500.0" prefWidth="800.0">
+                        <columns>
+                            <TableColumn fx:id="cocher" prefWidth="43.0" text="" />
+                            <TableColumn fx:id="centre" prefWidth="99.0" text="Centre act." />
+                            <TableColumn fx:id="nom" prefWidth="99.0" text="Nom" />
+                            <TableColumn fx:id="prenom" prefWidth="127.0" text="Prénom(s)" />
+                            <TableColumn fx:id="dateNaissance" prefWidth="126.0" text="Date Naiss." />
+                            <TableColumn fx:id="lieuNaissance" prefWidth="126.0" text="Lieu Naiss." />
+                            <TableColumn fx:id="sexe" prefWidth="93.0" text="Sexe" />
+                            <TableColumn fx:id="option" prefWidth="148.0" text="Option" />
+                            <TableColumn fx:id="etablissement" prefWidth="93.0" text="Etab. Cand." />
+                            <TableColumn fx:id="sport" prefWidth="88.0" text="Sport" />
+                        </columns>
+                    </TableView>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+            </TitledPane> 
+            <VBox>
+                <HBox>
+                    <Label prefHeight="26.0" prefWidth="34.0" text="Les " textFill="RED">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Label>
+                    <TextField fx:id="lesXpremiers" maxHeight="20.0" prefWidth="70.0" text="">
+                        <font>
+                            <Font size="15.0" />
+                        </font>
+                        <opaqueInsets>
+                            <Insets />
+                        </opaqueInsets>
+                        <VBox.margin>
+                            <Insets bottom="10.0" left="20.0" top="10.0" />
+                        </VBox.margin>
+                    </TextField>
+                    <Label prefHeight="26.0" prefWidth="162.0" text=" premiers candidats" textFill="RED">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Label>
+                  <VBox.margin>
+                     <Insets bottom="10.0" top="5.0" />
+                  </VBox.margin>
+                  <padding>
+                     <Insets left="5.0" />
+                  </padding>
+                </HBox>
+                <HBox>
+                    <CheckBox fx:id="toutCocherCheckBox" mnemonicParsing="false" onAction="#toutCocher" text="Tout cocher" textFill="RED">
+                        <font>
+                            <Font size="15.0" />
+                        </font>
+                        <opaqueInsets>
+                            <Insets />
+                        </opaqueInsets>
+                        <VBox.margin>
+                            <Insets left="20.0" top="10.0" />
+                        </VBox.margin>
+                    </CheckBox>
+                  <padding>
+                     <Insets left="5.0" />
+                  </padding>
+                </HBox>
+            </VBox>
+            <HBox alignment="CENTER" prefWidth="991.0" spacing="20">
+                <Button onAction="#saveAction" style="-fx-background-color: green;" text="Affecter" textFill="#e7e1e1" />
+            </HBox>
+            </VBox>
+        </SplitPane>
+        <TextField fx:id="rechercheField" layoutX="1036.0" layoutY="23.0" onKeyReleased="#fieldRechercheKeyUp" />
+        <Label layoutX="958.0" layoutY="27.0" text="Rechercher" textFill="RED" />
+   </children>
+</AnchorPane>

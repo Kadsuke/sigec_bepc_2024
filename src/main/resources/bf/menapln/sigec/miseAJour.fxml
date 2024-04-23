@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="bf.menapln.view.controller.MiseAJourController">
+    <stylesheets>
+        <URL value="@/styles/miseajour.css" />
+    </stylesheets>
+    
+    <center> 
+        <HBox alignment="CENTER" spacing="20">
+            <Button fx:id="buttonDB" onAction="#updateDatabase" text="Mise à Jour Base" />
+            <Button fx:id="buttonDP" onAction="#miseAJourDirection" text="Mise à Jour des DP" />
+            <Button fx:id="buttonLocalite" onAction="#miseAJourLocalite" text="Mise à Jour des Localité" />
+            <Button fx:id="buttonEtab" onAction="#miseAJourEtablissement" text="Mise à Jour des Etablissement" />
+        </HBox>
+    </center>
+   <top>
+      <Label contentDisplay="TOP" prefHeight="75.0" prefWidth="574.0" text="L'application ci est uniquement utilisées pour les mises à jour sur les données." textFill="RED" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+   </top>
+</BorderPane>

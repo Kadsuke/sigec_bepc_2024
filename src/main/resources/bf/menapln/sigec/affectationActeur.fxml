@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <stylesheets>
+        <!-- <URL value="@/styles/jury.css" /> -->
+    </stylesheets>
+    <children>
+      <Label alignment="CENTER" layoutX="349.0" layoutY="15.0" prefHeight="25.0" prefWidth="440.0" style="-fx-font-size: 20;" text="Affectation des acteurs dans les Jurys" textFill="RED" />
+        <SplitPane dividerPositions="0.3" layoutX="10" layoutY="10" orientation="HORIZONTAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+            <VBox spacing="3">
+                <TitledPane text="Infos Jury/Centre secondaire" textFill="RED">
+                    <VBox spacing="3" style="-fx-border-color: blue;">
+                        <HBox spacing="5">
+                            <VBox>
+                                <Label text="Centre examen *" />
+                                <ComboBox fx:id="comboboxCentreExamen" onAction="#centreExamenOnchange" prefHeight="26.0" prefWidth="250.0" />
+                            </VBox>
+                            <VBox>
+                                <Label text="Jury *" />
+                                <ComboBox fx:id="comboboxJury" onAction="#juryOnchange" prefHeight="26.0" prefWidth="250.0" />
+                            </VBox>
+                        </HBox>
+                        <HBox spacing="5">
+                            <VBox>
+                                <Label text="Centre sécondaire " />
+                                <ComboBox fx:id="comboboxCentreSecondaire" onAction="#centreSecondaireOnchange" prefHeight="26.0" prefWidth="250.0" />
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </TitledPane>
+                <!-- INFO POSTE -->
+                <TitledPane fx:id="infoPoste" text="Poste et état affectation" textFill="RED">
+                    <HBox spacing="3" style="-fx-border-color: blue;">
+                        <VBox spacing="5">
+                            <Label text="Poste " />
+                            <ComboBox fx:id="posteCombo" onAction="#posteOnchange" prefHeight="26.0" prefWidth="250.0" />
+                        </VBox>
+                        <VBox spacing="5">
+                            <Label text="Tenir compte de : " textFill="RED"/>
+                            <ComboBox fx:id="etatAffecter" prefHeight="26.0" prefWidth="250.0" />
+                        </VBox>
+                    </HBox>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </TitledPane>
+                 <!--MESSAGE  -->
+                 <TitledPane fx:id="info" text="NB" textFill="RED">
+                    <VBox spacing="3" style="-fx-border-color: blue;">
+                        <HBox spacing="5">
+                            <VBox>
+                                <Label fx:id="msg1" text="Les acteurs " />
+                            </VBox>
+                            <!-- <VBox>
+                                <Label fx:id="msgSpecialite" text="SPECIALITE CHOISIE" textFill="RED" />
+                            </VBox> -->
+                        </HBox>
+                        <HBox spacing="5">
+                            <VBox>
+                                <Label fx:id="msg2" text="sélectionnés seront  affecté au jury " />
+                            </VBox>
+                            <VBox>
+                                <Label fx:id="msgJury" text="JURY CHOISI" textFill="RED" />
+                            </VBox>
+                        </HBox>
+                        <HBox spacing="5">
+                            <VBox>
+                                <Label fx:id="msg3" text="de " />
+                            </VBox>
+                            <VBox>
+                                <Label fx:id="msgCentreExamen" text="CENTRE EXAMEN CHOISI" textFill="RED" />
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </TitledPane>
+            </VBox>
+            <VBox>
+                <TitledPane fx:id="titre" text="Listes des acteurs " textFill="RED">
+                
+                    <TableView fx:id="tableView" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+                        <columns>
+                            <TableColumn fx:id="cocher" prefWidth="43.0" text="" />
+                            <TableColumn fx:id="jury" prefWidth="99.0" text="Jury act." />
+                            <!-- <TableColumn fx:id="colId" prefWidth="64" text="Id"/> -->
+                            <TableColumn fx:id="colLocalite" prefWidth="110" text="Localite" />
+                            <TableColumn fx:id="colPoste" prefWidth="110" text="Poste" />
+                            <TableColumn fx:id="colEpreuves" prefWidth="110" text="Epreuves" />
+                            <TableColumn fx:id="colNom" prefWidth="169.0" text="Nom" />
+                            <TableColumn fx:id="colPrenom" prefWidth="110" text="Prénom(s)" />
+                            <TableColumn fx:id="colMatricule" prefWidth="100" text="Matricule" />
+                            <TableColumn fx:id="colNip" prefWidth="191.0" text="NIP" />
+                            <TableColumn fx:id="colSexe" prefWidth="110" text="Sexe" />
+                            <TableColumn fx:id="colTelephone" prefWidth="110" text="Téléphone" />
+                            <TableColumn fx:id="colStructure" prefWidth="110" text="Structure"/>
+                            <TableColumn fx:id="colStatut" prefWidth="110" text="Etat Candidature" />
+                            </columns>
+                    </TableView>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+            </TitledPane> 
+            <CheckBox fx:id="toutCocher" mnemonicParsing="false" onAction="#toutCocher" text="Tout cocher" textFill="RED">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="20.0" top="10.0" />
+               </VBox.margin>
+            </CheckBox>
+            <HBox alignment="CENTER" prefWidth="991.0" spacing="20">
+                <Button onAction="#saveAction" style="-fx-background-color: green;" text="Affecter" textFill="#e7e1e1" />
+                <!-- <Button style="-fx-bvackground-color: red;" text="Annuler" textFill="#e4dddd" /> -->
+            </HBox>
+            </VBox>
+        </SplitPane>
+        <TextField fx:id="rechercheField" layoutX="1036.0" layoutY="23.0" onKeyReleased="#fieldRechercheKeyUp" />
+        <Label layoutX="958.0" layoutY="27.0" text="Rechercher" textFill="RED" />
+   </children>
+</AnchorPane>

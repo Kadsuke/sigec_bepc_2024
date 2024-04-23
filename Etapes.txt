@@ -1,0 +1,9 @@
+
+
+Etapes
+1- Créer les centres de composition
+2- Créer les jurys
+3- Affecter les candidats
+4-Affecter les acteurs
+
+NB : Possibilité de faire changé de centre au candidat

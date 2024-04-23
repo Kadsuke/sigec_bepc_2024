@@ -1,0 +1,9 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+#backgroundPane {
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-opacity: 0.4;
+}
